@@ -1,4 +1,3 @@
-#%%
 from functools import reduce
 
 # Question 1 Checking doc string length
@@ -69,7 +68,7 @@ def counter_single_dict(fn: "funtion name",*args) -> "inner_single_dict":
     return:-
         inner_single_dict function object is returned
     '''
-    count=0
+    count = 0
     def inner_single_dict(*args)-> "func(args) call":
         '''
         This nested function is a closure function which increaments the count_dict by 1 for every call of the aruthematic fuintions
@@ -131,7 +130,7 @@ def addition(*args)-> "Sum of all the elements of args":
         if not (isinstance(x,int) or isinstance(x,float)):
             raise TypeError("Arithematic operations can be performed on integers or floats")
     return reduce(lambda x, y: x + y,args[0])
-    
+
 def multiplication(*args)-> "Element wise multiplication of all the arguments":
     '''
     This function performs element wise multiplication of args
@@ -163,4 +162,3 @@ def division(*args)-> "Element wise division of all the arguments":
         return reduce(lambda x, y: x / y,args[0])
     else:
         return 0
-#%%

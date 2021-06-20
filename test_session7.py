@@ -150,7 +150,7 @@ def test_session7_length_freevars(): # Length variable is free variable
     failures_message: Length variable should be a free variable
     """
     len_of_docstring = func_docstring(function_with_less_docstring)
-    assert len_of_docstring.__code__.co_freevars[1] == 'length', "Length variable should be a free variable"
+    assert len_of_docstring.__code__.co_freevars[0] == 'length', "Length variable should be a free variable"
 
 # Fibonacci Sequence
 
@@ -371,6 +371,6 @@ def test_session7_counter_single_dict_closure(): #Check closure
     assert add.__closure__ != None, "add is a closure function"
     assert mul.__closure__ != None, "add is a closure function"
     assert div.__closure__ != None, "add is a closure function"
-    assert add.__code__.co_freevars == ('count', 'func'), "Closure should have two free vars"
-    assert mul.__code__.co_freevars == ('count', 'func'), "Closure should have two free vars"
-    assert div.__code__.co_freevars == ('count', 'func'), "Closure should have two free vars"
+    assert add.__code__.co_freevars == ('count', 'fn'), "Closure should have two free vars"
+    assert mul.__code__.co_freevars == ('count', 'fn'), "Closure should have two free vars"
+    assert div.__code__.co_freevars == ('count', 'fn'), "Closure should have two free vars"
