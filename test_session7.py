@@ -193,7 +193,7 @@ def test_session7_fib_seq_freevars(): # Length variable is free variable
     failures_message: Length variable should be a free variable
     """
     fib_numb = fib_func()
-    assert fib_numb.__code__.co_freevars == 'fib_seq', "Length variable should be a free variable"
+    assert fib_numb.__code__.co_freevars == ('fib_seq',), "Length variable should be a free variable"
 
 # Arithematic operations using closure
 
