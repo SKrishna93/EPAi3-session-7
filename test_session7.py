@@ -150,7 +150,7 @@ def test_session7_length_freevars(): # Length variable is free variable
     failures_message: Length variable should be a free variable
     """
     len_of_docstring = func_docstring(function_with_less_docstring)
-    assert len_of_docstring.__code__.co_freevars[1] == 'Length', "Length variable should be a free variable"
+    assert len_of_docstring.__code__.co_freevars[1] == 'length', "Length variable should be a free variable"
 
 # Fibonacci Sequence
 
@@ -193,7 +193,7 @@ def test_session7_fib_seq_freevars(): # Length variable is free variable
     failures_message: Length variable should be a free variable
     """
     fib_numb = fib_func()
-    assert fib_numb.__code__.co_freevars[1] == 'Length', "Length variable should be a free variable"
+    assert fib_numb.__code__.co_freevars[1] == 'fib_seq', "Length variable should be a free variable"
 
 # Arithematic operations using closure
 
@@ -246,8 +246,8 @@ def test_session7_counter_single_dict_count_zero(): #pass zero in args
     mul = counter_single_dict(multiplication)
     div = counter_single_dict(division)
     assert add(10, 0, 5, 3, 2) == sum([10, 0, 5, 3, 2]), "Check your addition program"
-    assert mul(10, 0, 5, 3, 2) == reduce(lambda x, y: x * y, [10, 0, 5, 3, 2]), "Check your multiplication program"
-    assert div(10, 0, 5, 3, 2) == reduce(lambda x, y: x / y, [10, 0, 5, 3, 2]), "Check your division program"
+    assert mul(10, 0, 5, 3, 2) == 0, "Check your multiplication program"
+    assert div(10, 0, 5, 3, 2) == 0, "Check your division program"
     assert count_dict == {'addition': 1, 'multiplication':1, 'division': 1}, "Check you dictionary and counter program"
 
 def test_session7_counter_single_dict_noargs(): #pass no args
@@ -355,9 +355,9 @@ def test_session7_counter_multiple_dict_closure(): #Check closure
     assert add.__closure__ != None, "add is a closure function"
     assert mul.__closure__ != None, "add is a closure function"
     assert div.__closure__ != None, "add is a closure function"
-    assert add.__code__.co_freevars == ('count', 'func'), "Closure should have two free vars"
-    assert mul.__code__.co_freevars == ('count', 'func'), "Closure should have two free vars"
-    assert div.__code__.co_freevars == ('count', 'func'), "Closure should have two free vars"
+    assert add.__code__.co_freevars == ('count', 'fn'), "Closure should have two free vars"
+    assert mul.__code__.co_freevars == ('count', 'fn'), "Closure should have two free vars"
+    assert div.__code__.co_freevars == ('count', 'fn'), "Closure should have two free vars"
 
 def test_session7_counter_single_dict_closure(): #Check closure
     """

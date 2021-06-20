@@ -116,7 +116,7 @@ def counter_multiple_dict(fn: "funtion name") -> "inner_multiple_dict":
             else:
                 raise ValueError("Please pass the counter dictionary")
         else:
-            raise ValueError("There are no Arguments")
+            raise ValueError("Arguments can't be empty")
     return inner_multiple_dict
 
 def addition(*args)-> "Sum of all the elements of args":
@@ -129,7 +129,7 @@ def addition(*args)-> "Sum of all the elements of args":
     '''
     for x in args[0]:
         if not (isinstance(x,int) or isinstance(x,float)):
-            raise ValueError("Arithematic operations can be performed on integers or floats")
+            raise TypeError("Arithematic operations can be performed on integers or floats")
     return reduce(lambda x, y: x + y,args[0])
     
 def multiplication(*args)-> "Element wise multiplication of all the arguments":
@@ -142,7 +142,7 @@ def multiplication(*args)-> "Element wise multiplication of all the arguments":
     '''
     for x in args[0]:
         if not (isinstance(x,int) or isinstance(x,float)):
-            raise ValueError("Arithematic operations can be performed on integers or floats")
+            raise TypeError("Arithematic operations can be performed on integers or floats")
     if all(args[0]):
         return reduce(lambda x, y: x * y,args[0])
     else:
@@ -158,7 +158,7 @@ def division(*args)-> "Element wise division of all the arguments":
     '''
     for x in args[0]:
         if not (isinstance(x,int) or isinstance(x,float)):
-            raise ValueError("Arithematic operations can be performed on integers or floats")
+            raise TypeError("Arithematic operations can be performed on integers or floats")
     if all(args[0]):
         return reduce(lambda x, y: x / y,args[0])
     else:
