@@ -54,12 +54,17 @@ __counter_multiple_dict (fn, *args, **kwargs)__ :
 + The method takes 1 positional argument *'fn'* and takes any number of args and kwargs
 + fn: Predefined functions addition, multiplication and division
 
+### Question - 4
+
+### Objective: To write a closure that counts how many times a function was called. Keep track of how many times add/mul/div functions were called, and different dictionary variables to update different dictionaries
+
 __inner_multiple_dict (*args, **kwargs)__ :
 + This method takes arguments for the operation function (addition, multiplication and division) and a keyword argument (global dictionary). Returns the operation function call along with the arguments
     + *args - numerical arguments for the arithematic operations functions
     + **kwargs - keyword argument for updating the count variable
 + Function is expected to take one of the global dictionaries count_dict_add, count_dict_mul or count_dict_div as a keyword argument and update the latest value of the variable count
 + __Algorithm__: Access the nonlocal variable count and increase it by 1 and store in a gobal dictionary passed as a keyword argument. Call the addition/multiplication/division function based on the fn argument passed. Return the resultant of the operations call
+
 
 __addition (*args)__ :
 + The function takes the arguments passed and returns their sum
